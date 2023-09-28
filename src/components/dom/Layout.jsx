@@ -1,38 +1,24 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import dynamic from 'next/dynamic'
-const Scene = dynamic(() => import('@/components/canvas/Scene'), { ssr: false })
+import { useRef } from "react";
+import dynamic from "next/dynamic";
+const Scene = dynamic(() => import("@/components/canvas/Scene"), {
+  ssr: false,
+});
 
 const Layout = ({ children }) => {
-  const ref = useRef()
+  const ref = useRef();
 
   return (
-    <div
-      ref={ref}
-      style={{
-        position: 'relative',
-        width: ' 100%',
-        height: '100%',
-        overflow: 'auto',
-        touchAction: 'auto',
-      }}
-    >
+    <div ref={ref} className="relative w-full h-full touch-auto">
       {children}
       <Scene
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          pointerEvents: 'none',
-        }}
+        className="!fixed top-0 left-0 w-screen h-screen pointer-events-none"
         eventSource={ref}
-        eventPrefix='client'
+        eventPrefix="client"
       />
     </div>
-  )
-}
+  );
+};
 
-export { Layout }
+export { Layout };
