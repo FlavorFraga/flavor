@@ -6,6 +6,7 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
@@ -60,67 +61,69 @@ function FoodCardComponent({
   text4 = "Price",
   icon = "https://c.animaapp.com/DB9yliXt/img/icon-1.svg",
   photoClassName,
-  photo = "https://c.animaapp.com/DB9yliXt/img/photo-4@2x.png",
 }) {
   return (
     <div className={`h-[287px] w-[165px] rounded-[12px] ${className}`}>
-      <div className={`relative h-[287px] ${overlapGroupClassName}`}>
-        <div
-          className={`absolute left-0 top-[72px] h-[215px] w-[165px] rounded-[12px] bg-white shadow-[0px_0px_20px_#aab1d04c] ${backgroundClassName}`}
-        />
-        <div
-          className={`absolute left-0 top-[155px] flex w-[165px] flex-col items-start gap-[5px] px-[10px] pb-[10px] pt-0 ${infoClassName}`}
-        >
-          <div className="relative mt-[-1.00px] w-fit text-[16px] font-medium leading-[normal] tracking-[0] text-black [font-family:'Poppins',Helvetica]">
-            {text}
-          </div>
-          <div className="relative self-stretch text-[12px] font-normal leading-[normal] tracking-[0] text-green [font-family:'Poppins',Helvetica]">
-            {text1}
-          </div>
-          <div className="relative inline-flex flex-[0_0_auto] items-center gap-[5px]">
-            <div className="relative w-fit whitespace-nowrap text-[12px] font-normal leading-[normal] tracking-[0] text-gray-iii [font-family:'Poppins',Helvetica]">
-              🔥
+      <Link href="/detail">
+        <div className={`relative h-[287px] ${overlapGroupClassName}`}>
+          <div
+            className={`absolute left-0 top-[72px] h-[230px] w-[170px] rounded-[12px] bg-white shadow-[0px_0px_40px_#aab1d04c] ${backgroundClassName}`}
+          />
+
+          <div
+            className={`absolute left-0 top-[155px] flex w-[165px] flex-col items-start gap-[5px] px-[10px] pb-[10px] pt-0 ${infoClassName}`}
+          >
+            <div className="relative mt-[-1.00px] w-fit text-[16px] font-medium leading-[normal] tracking-[0] text-black [font-family:'Poppins',Helvetica]">
+              {text}
             </div>
-            <div className="relative mt-[-1.00px] w-fit text-[12px] font-normal leading-[normal] tracking-[0] text-gray-iii [font-family:'Poppins',Helvetica]">
-              {text2}
+            <div className="relative self-stretch text-[12px] font-normal leading-[normal] tracking-[0] text-green [font-family:'Poppins',Helvetica]">
+              {text1}
             </div>
-          </div>
-          <div className="relative inline-flex flex-[0_0_auto] items-center gap-[5px]">
-            <img
-              className="relative ml-[-0.50px] h-[13px] w-[13px]"
-              alt="Icon"
-              src="https://c.animaapp.com/DB9yliXt/img/icon-9.svg"
-            />
-            <div className="relative mt-[-1.00px] w-fit text-[12px] font-normal leading-[normal] tracking-[0] text-gray-iii [font-family:'Poppins',Helvetica]">
-              {text3}
-            </div>
-          </div>
-          <div className="relative flex w-full flex-[0_0_auto] items-center justify-between self-stretch">
-            <div className="relative inline-flex flex-[0_0_auto] items-center gap-[2px]">
-              <div className="relative mt-[-1.00px] w-fit text-[16px] font-medium leading-[normal] tracking-[0] text-black [font-family:'Poppins',Helvetica]">
-                {text4}
+            <div className="relative inline-flex flex-[0_0_auto] items-center gap-[5px]">
+              <div className="relative w-fit whitespace-nowrap text-[12px] font-normal leading-[normal] tracking-[0] text-gray-iii [font-family:'Poppins',Helvetica]">
+                🔥
               </div>
-              <div className="relative mt-[-1.00px] w-fit text-[16px] font-medium leading-[normal] tracking-[0] text-black [font-family:'Poppins',Helvetica]">
-                €
+              <div className="relative mt-[-1.00px] w-fit text-[12px] font-normal leading-[normal] tracking-[0] text-gray-iii [font-family:'Poppins',Helvetica]">
+                {text2}
               </div>
             </div>
-            <img
-              className="relative mr-[-0.75px] h-[19.28px] w-[21.5px]"
-              alt="Icon"
-              src={icon}
-            />
+            <div className="relative inline-flex flex-[0_0_auto] items-center gap-[5px]">
+              <img
+                className="relative ml-[-0.50px] h-[13px] w-[13px]"
+                alt="Icon"
+                src="https://c.animaapp.com/DB9yliXt/img/icon-9.svg"
+              />
+              <div className="relative mt-[-1.00px] w-fit text-[12px] font-normal leading-[normal] tracking-[0] text-gray-iii [font-family:'Poppins',Helvetica]">
+                {text3}
+              </div>
+            </div>
+            <div className="relative flex w-full flex-[0_0_auto] items-center justify-between self-stretch">
+              <div className="relative inline-flex flex-[0_0_auto] items-center gap-[2px]">
+                <div className="relative mt-[-1.00px] w-fit text-[16px] font-medium leading-[normal] tracking-[0] text-black [font-family:'Poppins',Helvetica]">
+                  {text4}
+                </div>
+                <div className="relative mt-[-1.00px] w-fit text-[16px] font-medium leading-[normal] tracking-[0] text-black [font-family:'Poppins',Helvetica]">
+                  €
+                </div>
+              </div>
+              <img
+                className="relative mr-[-0.75px] h-[19.28px] w-[21.5px]"
+                alt="Icon"
+                src={icon}
+              />
+            </div>
           </div>
+          <View
+            orbit={false}
+            className={`absolute left-[10px] top-[87px] h-[145px] w-[122px] object-cover ${photoClassName}`}
+          >
+            <Suspense fallback={null}>
+              <Food scale={0.145} position={[0, 0, 0]} rotation={[0, 0, 0]} />
+              <Common color={"white"} />
+            </Suspense>
+          </View>
         </div>
-        <View
-          orbit={false}
-          className={`absolute left-[10px] top-[87px] h-[145px] w-[122px] object-cover ${photoClassName}`}
-        >
-          <Suspense fallback={null}>
-            <Food scale={0.145} position={[0, 0, 0]} rotation={[0, 0, 0]} />
-            <Common color={"white"} />
-          </Suspense>
-        </View>
-      </div>
+      </Link>
     </div>
   );
 }
