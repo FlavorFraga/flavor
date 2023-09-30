@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { Button } from "@nextui-org/button";
 
-const Nav = dynamic(() => import("@/components/ui/nav"), {
+const NavComponent = dynamic(() => import("@/components/ui/nav"), {
   ssr: false,
 });
 const Common = dynamic(
@@ -48,7 +48,7 @@ const Food = dynamic(
 );
 
 function MoreInfoPizza() {
-  const [seeMore, setSeeMore] = useState(true);
+  const [seeMore, setSeeMore] = useState(false);
   const handleClick = () => {
     console.log("pressed");
   };
@@ -56,7 +56,7 @@ function MoreInfoPizza() {
   const renderDescription = () => {
     if (seeMore) {
       return (
-        <div className="flex flex-col items-start gap-[10px] px-[20px] py-0 relative">
+        <div className="min-w-[320px] flex flex-col items-start gap-[10px] px-[20px] py-0 relative">
           <p className="relative self-stretch mt-[-1.00px] [font-family:'Poppins-Regular',Helvetica] font-normal text-black text-[16px] tracking-[0] leading-[normal]">
             <span className="[font-family:'Poppins-Regular',Helvetica] font-normal text-[#010101] text-[16px] tracking-[0]">
               Una explosión de sabores en cada bocado, con alcachofas tiernas,
@@ -120,16 +120,14 @@ function MoreInfoPizza() {
             </li>
           </ul>
 
-          <p className="mt-1 relative self-stretch [font-family:'Poppins-Regular',Helvetica] font-normal text-transparent text-[16px] tracking-[0] leading-[normal]">
+          <p
+            onClick={() => {
+              setSeeMore(false);
+            }}
+            className=" cursor-pointer mt-1 relative self-stretch [font-family:'Poppins-Regular',Helvetica] font-normal text-transparent text-[16px] tracking-[0] leading-[normal]"
+          >
             <span className="text-[#010101]">&nbsp;</span>
-            <span
-              onClick={() => {
-                setSeeMore(false);
-              }}
-              className="text-[#319f60]"
-            >
-              Ver menos
-            </span>
+            <span className="text-[#319f60] hover:underline">Ver menos</span>
           </p>
         </div>
       );
@@ -139,16 +137,14 @@ function MoreInfoPizza() {
           <p className="relative self-stretch mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-black text-[16px] tracking-[0] leading-[normal]">
             Una explosión de sabores en cada bocado, con alcachofas tiernas...
           </p>
-          <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-normal text-transparent text-[16px] tracking-[0] leading-[normal]">
+          <p
+            onClick={() => {
+              setSeeMore(true);
+            }}
+            className=" cursor-pointer relative self-stretch [font-family:'Poppins',Helvetica] font-normal text-transparent text-[16px] tracking-[0] leading-[normal]"
+          >
             <span className="text-[#010101]">&nbsp;</span>
-            <span
-              onClick={() => {
-                setSeeMore(true);
-              }}
-              className="text-[#319f60]"
-            >
-              Ver más
-            </span>
+            <span className="text-[#319f60] hover:underline">Ver más</span>
           </p>
         </div>
       );
@@ -157,7 +153,7 @@ function MoreInfoPizza() {
 
   return (
     <div className="min-h-screen flex flex-col items-center gap-[30px] relative bg-white">
-      <Nav
+      <NavComponent
         className="![backdrop-filter:unset] ![-webkit-backdrop-filter:unset] !w-[unset]"
         property1="dish"
       />

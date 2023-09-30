@@ -2,6 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 
 const ButtonComponent = dynamic(() => import("@/components/ui/button"), {
   ssr: false,
@@ -18,15 +19,13 @@ const Mobile = dynamic(() => import("@/components/responsive/mobile"), {
   ssr: false,
 });
 
-import { useRouter } from "next/navigation";
-
 function WelcomeMobile() {
   const router = useRouter();
 
   return (
     <>
       <Mobile>
-        <div className="relative flex flex-col items-start gap-[80px] bg-white p-[20px] h-[93vh]">
+        <div className="min-w-[320px] relative flex flex-col items-start gap-[80px] bg-white p-[20px] h-[93vh]">
           <div className="relative w-full flex-1 grow self-stretch bg-white" />
           <div className="relative flex w-full flex-[0_0_auto] flex-col items-start gap-[20px] self-stretch">
             <p className="relative mt-[-1.00px] self-stretch text-[38px] font-bold leading-[46.9px] tracking-[0] text-transparent [font-family:'Poppins',Helvetica]">
@@ -43,7 +42,7 @@ function WelcomeMobile() {
               onClick={() => {
                 // Coloca aquí la lógica que deseas ejecutar cuando se hace clic en el botón
                 setTimeout(() => {
-                  console.log("Login");
+                  router.push("/login");
                 }, 400);
               }}
               property1="active"

@@ -13,7 +13,7 @@ const HeartIcon = dynamic(() => import("@/components/icons/heartIcon"), {
 
 function MainMen() {
   return (
-    <div className="relative flex flex-col items-center gap-[40px] bg-gray-i">
+    <div className="min-w-[320px] relative flex flex-col items-center gap-[40px] bg-gray-i">
       <div className="relative flex w-full items-center justify-between self-stretch bg-[#ffffff03] px-[20px] pb-[20px] pt-[30px] backdrop-blur-[30px] backdrop-brightness-[100%]">
         <Link href="/">
           <img
