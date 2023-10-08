@@ -1,23 +1,12 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 
-const ButtonComponent = dynamic(() => import("@/components/ui/button"), {
-  ssr: false,
-});
-const Desktop = dynamic(() => import("@/components/responsive/desktop"), {
-  ssr: false,
-});
-
-const Tablet = dynamic(() => import("@/components/responsive/tablet"), {
-  ssr: false,
-});
-
-const Mobile = dynamic(() => import("@/components/responsive/mobile"), {
-  ssr: false,
-});
+import ButtonComponent from "@/components/ui/button";
+import Desktop from "@/components/responsive/desktop";
+import Tablet from "@/components/responsive/tablet";
+import Mobile from "@/components/responsive/mobile";
 
 function WelcomeMobile() {
   const router = useRouter();

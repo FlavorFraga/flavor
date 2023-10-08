@@ -1,9 +1,9 @@
-const title = "Flavor 3D Menu";
-const url = "https://flavor-menu.vercel.app/";
+const title = "iFlavi 3D Menu";
+const url = "https://iflavi-menu.vercel.app/";
 const description =
   "Experience our interactive 3D menu using React Three Fiber and Next.js";
-const author = "Flavor Team";
-const twitter = "@flavor";
+const author = "iFlavi Team";
+const twitter = "@iflavi";
 
 export default function Head() {
   return (
@@ -21,7 +21,7 @@ export default function Head() {
       <meta name="description" content={description} />
       <meta
         name="keywords"
-        content="Flavor, 3D Menu, Interactive Menu, React Three Fiber, Next.js"
+        content="iFlavi, 3D Menu, Interactive Menu, React Three Fiber, Next.js"
       />
       <meta name="robots" content="index,follow" />
       <meta name="distribution" content="web" />
@@ -69,10 +69,10 @@ export default function Head() {
       {/* Meta etiquetas para Twitter Summary Card */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={twitter} />
-      <meta name="application-name" content="Flavor 3D Menu" />
+      <meta name="application-name" content="iFlavi 3D Menu" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-title" content="Flavor 3D Menu" />
+      <meta name="apple-mobile-web-app-title" content="iFlavi 3D Menu" />
       <meta
         name="description"
         content="Experience our interactive 3D menu using React Three Fiber and Next.js"
@@ -127,7 +127,7 @@ export default function Head() {
 
       {/* Meta etiquetas para Twitter Summary Card (otras) */}
       <meta name="twitter:url" content="https://yourdomain.com" />
-      <meta name="twitter:title" content="Flavor 3D Menu" />
+      <meta name="twitter:title" content="iFlavi 3D Menu" />
       <meta
         name="twitter:description"
         content="Experience our interactive 3D menu using React Three Fiber and Next.js"
@@ -136,7 +136,7 @@ export default function Head() {
         name="twitter:image"
         content="https://yourdomain.com/icons/android-chrome-192x192.png"
       />
-      <meta name="twitter:creator" content="@flavor" />
+      <meta name="twitter:creator" content="@iflavi" />
     </>
   );
 }

@@ -54,7 +54,7 @@ function InputComponent({ property1, property2, className, placeholder }) {
             type="password"
             value={inputValue}
             onChange={handleChange}
-            className={`w-full py-[10px] px-3 border-none outline-none mt-[-7.50px] text-gray-iii relative ${
+            className={`w-full pt-[4px] border-none outline-none mt-[-7.50px] text-gray-iii relative ${
               property2 === "default"
                 ? "font-text-mobile"
                 : "[font-family:'Poppins-Regular',Helvetica]"
@@ -97,7 +97,7 @@ function InputComponent({ property1, property2, className, placeholder }) {
             type="text"
             value={inputValue}
             onChange={handleChange}
-            className={`w-full py-[10px] px-3 border-none outline-none [font-family:'Poppins-Regular',Helvetica] mt-[-7.50px] tracking-[0] text-[14px] flex-1 text-gray-iii relative font-normal leading-[normal] ${
+            className={`w-full pt-[4px] border-none outline-none [font-family:'Poppins-Regular',Helvetica] mt-[-7.50px] tracking-[0] text-[14px] flex-1 text-gray-iii relative font-normal leading-[normal] ${
               ["search", "text"].includes(property1) &&
               (property1 === "search" || property2 === "default") &&
               (property1 === "text" || property2 === "selected") &&
@@ -116,7 +116,7 @@ function InputComponent({ property1, property2, className, placeholder }) {
             type="text"
             value={inputValue}
             onChange={handleChange}
-            className={`w-full py-[10px] px-3 border-none outline-none [font-family:'Poppins-Regular',Helvetica] mt-[-7.50px] tracking-[0] text-[14px] flex-1 text-gray-iii relative font-normal leading-[normal] ${
+            className={`w-full pt-[4px] border-none outline-none [font-family:'Poppins-Regular',Helvetica] mt-[-7.50px] tracking-[0] text-[14px] flex-1 text-gray-iii relative font-normal leading-[normal] ${
               property2 === "selected" ? "mb-[-5.50px]" : "mb-[-3.50px]"
             }`}
             placeholder={placeholder}

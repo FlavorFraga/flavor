@@ -1,24 +1,12 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const ButtonComponent = dynamic(() => import("@/components/ui/button"), {
-  ssr: false,
-});
-
-const InputComponent = dynamic(() => import("@/components/ui/input"), {
-  ssr: false,
-});
-
-const BackArrowIcon = dynamic(
-  () => import("@/components/icons/backArrowIcon"),
-  {
-    ssr: false,
-  }
-);
+import ButtonComponent from "@/components/ui/button";
+import InputComponent from "@/components/ui/input";
+import BackArrowIcon from "@/components/icons/backArrowIcon";
 
 function Login() {
   const router = useRouter();

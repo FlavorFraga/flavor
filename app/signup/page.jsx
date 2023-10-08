@@ -1,23 +1,11 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 
-const ButtonComponent = dynamic(() => import("@/components/ui/button"), {
-  ssr: false,
-});
-
-const InputComponent = dynamic(() => import("@/components/ui/input"), {
-  ssr: false,
-});
-
-const BackArrowIcon = dynamic(
-  () => import("@/components/icons/backArrowIcon"),
-  {
-    ssr: false,
-  }
-);
+import BackArrowIcon from "@/components/icons/backArrowIcon";
+import InputComponent from "@/components/ui/input";
+import ButtonComponent from "@/components/ui/button";
 
 function SignUp() {
   return (
