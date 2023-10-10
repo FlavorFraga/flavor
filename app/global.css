@@ -45,4 +45,16 @@
   --title-letter-spacing: 0px;
   --title-line-height: normal;
   --white: rgba(255, 255, 255, 1);
+  --text-desktop-font-family: var(--text-font-family);
+  --text-desktop-font-size: 16px;
+  --text-desktop-font-style: var(--text-font-style);
+  --text-desktop-font-weight: var(--text-font-weight);
+  --text-desktop-letter-spacing: var(--text-letter-spacing);
+  --text-desktop-line-height: var(--text-line-height);
+  --text-mobile-font-family: var(--text-font-family);
+  --text-mobile-font-size: var(--text-font-size);
+  --text-mobile-font-style: var(--text-font-style);
+  --text-mobile-font-weight: var(--text-font-weight);
+  --text-mobile-letter-spacing: var(--text-letter-spacing);
+  --text-mobile-line-height: var(--text-line-height);
 }

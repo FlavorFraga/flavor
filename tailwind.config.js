@@ -1,12 +1,13 @@
 import { nextui } from "@nextui-org/react";
 
 module.exports = {
-  mode: "jit",
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-  ], // remove unused styles in production
+  ],
+  mode: "jit",
+  // remove unused styles in production
   darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {
@@ -21,7 +22,8 @@ module.exports = {
         white: "var(--white)",
       },
       fontFamily: {
-        text: "var(--text-font-family)",
+        "text-desktop": "var(--text-desktop-font-family)",
+        "text-mobile": "var(--text-mobile-font-family)",
         title: "var(--title-font-family)",
         "title-big": "var(--title-big-font-family)",
       },
