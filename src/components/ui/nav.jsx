@@ -6,13 +6,7 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 import React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-
-const BackArrowIcon = dynamic(
-  () => import("@/components/icons/backArrowIcon"),
-  {
-    ssr: false,
-  }
-);
+import BackArrowIcon from "../icons/backArrowIcon";
 
 function NavComponent({ property1, className }) {
   return (

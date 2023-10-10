@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
-import { Button } from "@nextui-org/button";
 import NavComponent from "@/components/ui/nav";
+import { Button } from "@nextui-org/react";
+import { XR, toggleSession, stopSession } from "@react-three/xr";
+import { Canvas } from "@react-three/fiber";
 
 const Common = dynamic(
   () => import("@/components/canvas/View").then((mod) => mod.Common),
@@ -15,7 +16,7 @@ const View = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-32 w-full flex-col items-center justify-center">
+      <div className="flex h-44 w-full flex-col items-center justify-center">
         <svg
           className="-ml-1 mr-3 h-5 w-5 animate-spin text-black"
           fill="none"
@@ -45,11 +46,14 @@ const Food = dynamic(
   { ssr: false }
 );
 
+const Beans = dynamic(
+  () => import("@/components/canvas/Examples").then((mod) => mod.Beans),
+  { ssr: false }
+);
+
 function MoreInfoPizza() {
+  const [inmersiveAR, setInmersiveAR] = useState(false);
   const [seeMore, setSeeMore] = useState(false);
-  const handleClick = () => {
-    console.log("pressed");
-  };
 
   const renderDescription = () => {
     if (seeMore) {
@@ -149,80 +153,115 @@ function MoreInfoPizza() {
     }
   };
 
+  const startXRSession = async () => {
+    const session = await toggleSession("immersive-ar");
+    if (session) {
+      setInmersiveAR(true);
+    } else {
+      setInmersiveAR(false);
+    }
+  };
+
+  const stopXRSession = async () => {
+    await stopSession();
+  };
+
   return (
-    <div className="max-h-screen flex flex-col items-center gap-[30px] relative bg-white">
-      <NavComponent
-        className="![backdrop-filter:unset] ![-webkit-backdrop-filter:unset] !w-[unset]"
-        property1="dish"
-      />
-      <View orbit className="relative w-full h-[200px]">
-        <Suspense fallback={null}>
-          <Food scale={0.7} position={[0, 0, 0]} rotation={[0, 0, 0]} />
-          <Common color={"white"} />
-        </Suspense>
-      </View>
-      {/*      <img
+    <>
+      {inmersiveAR ? (
+        <Canvas
+          gl={{
+            antialias: true,
+            powerPreference: "high-performance",
+          }}
+        >
+          <XR frameRate={120} referenceSpace="local">
+            <ambientLight />
+            <pointLight position={[10, 10, 10]} />
+            <Suspense fallback={null}>
+              <Beans scale={0.03} position={[0, -2, 0]} rotation={[0, 0, 0]} />
+              <Common color={"lightblue"} />
+            </Suspense>
+          </XR>
+        </Canvas>
+      ) : (
+        <div className="min-h-screen flex flex-col items-center gap-[10px] relative bg-white">
+          <NavComponent
+            className="![backdrop-filter:unset] ![-webkit-backdrop-filter:unset] !w-[unset]"
+            property1="dish"
+          />
+          <View orbit className="relative w-full h-[240px]">
+            <Suspense fallback={null}>
+              <Beans scale={0.1} position={[0, 0, 0]} rotation={[0, 0, 0]} />
+              <Common color={"white"} />
+            </Suspense>
+          </View>
+          {/*      <img
         className="relative w-[340px] h-[340px]"
         alt="Element model"
         src="https://c.animaapp.com/tayVNL83/img/3d-model@2x.png"
       /> */}
-      <div className="flex items-center px-[20px] py-0 relative self-stretch w-full flex-[0_0_auto]">
-        <div className="relative flex-1 mt-[-1.00px] font-title font-[number:var(--title-font-weight)] text-black text-[length:var(--title-font-size)] tracking-[var(--title-letter-spacing)] leading-[var(--title-line-height)] [font-style:var(--title-font-style)]">
-          Pizza Cuatro Estaciones
-        </div>
-      </div>
-      {renderDescription()}
-      <div className="flex flex-col items-start gap-[10px] px-[20px] py-0 relative self-stretch w-full flex-[0_0_auto]">
-        <div className="flex items-center gap-[5px] relative self-stretch w-full flex-[0_0_auto]">
-          <div className="relative w-fit [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[18px] tracking-[0] leading-[normal] whitespace-nowrap">
-            🔥
-          </div>
-          <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[16px] tracking-[0] leading-[normal]">
-            1816 Calorías
-          </div>
-        </div>
-        <div className="flex items-center gap-[5px] relative self-stretch w-full flex-[0_0_auto]">
-          <img
-            className="relative w-[19px] h-[19px] ml-[-0.50px]"
-            alt="Icon"
-            src="https://c.animaapp.com/tayVNL83/img/icon-1.svg"
-          />
-          <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[16px] tracking-[0] leading-[normal]">
-            20 min
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col items-start gap-[40px] px-[20px] py-0 relative self-stretch w-full flex-[0_0_auto]">
-        <div className="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
-          <div className="inline-flex items-center gap-[5px] relative flex-[0_0_auto]">
-            <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-medium text-black text-[20px] tracking-[0] leading-[normal]">
-              14.00
-            </div>
-            <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-medium text-black text-[20px] tracking-[0] leading-[normal]">
-              €
+          <div className="flex items-center px-[20px] py-0 relative self-stretch w-full flex-[0_0_auto]">
+            <div className="relative flex-1 mt-[-1.00px] font-title font-[number:var(--title-font-weight)] text-black text-[length:var(--title-font-size)] tracking-[var(--title-letter-spacing)] leading-[var(--title-line-height)] [font-style:var(--title-font-style)]">
+              Pizza Cuatro Estaciones
             </div>
           </div>
-          <img
-            className="relative w-[20px] h-[18px] mr-[-1.00px]"
-            alt="Like"
-            src="https://c.animaapp.com/tayVNL83/img/like.svg"
-          />
-        </div>
-        <Button
-          onClick={handleClick}
-          className="flex mb-6 h-[50px] items-center justify-center gap-[10px] p-[20px] relative self-stretch w-full bg-green rounded-[12px] overflow-hidden shadow-shadow"
-        >
-          <img
-            className="relative w-[13.46px] h-[15px] mt-[-2.50px] mb-[-2.50px]"
-            alt="Icon"
-            src="https://c.animaapp.com/tayVNL83/img/icon-2.svg"
-          />
-          <div className="relative w-fit mt-[-8.00px] mb-[-6.00px] [font-family:'Poppins',Helvetica] font-normal text-white text-[16px] text-center tracking-[0] leading-[normal]">
-            Ver sobre la mesa
+          {renderDescription()}
+          <div className="flex flex-col items-start gap-[10px] px-[20px] py-0 relative self-stretch w-full flex-[0_0_auto]">
+            <div className="flex items-center gap-[5px] relative self-stretch w-full flex-[0_0_auto]">
+              <div className="relative w-fit [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[18px] tracking-[0] leading-[normal] whitespace-nowrap">
+                🔥
+              </div>
+              <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[16px] tracking-[0] leading-[normal]">
+                1816 Calorías
+              </div>
+            </div>
+            <div className="flex items-center gap-[5px] relative self-stretch w-full flex-[0_0_auto]">
+              <img
+                className="relative w-[19px] h-[19px] ml-[-0.50px]"
+                alt="Icon"
+                src="https://c.animaapp.com/tayVNL83/img/icon-1.svg"
+              />
+              <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[16px] tracking-[0] leading-[normal]">
+                20 min
+              </div>
+            </div>
           </div>
-        </Button>
-      </div>
-    </div>
+          <div className="flex flex-col items-start gap-[10px] px-[20px] py-0 relative self-stretch w-full flex-[0_0_auto]">
+            <div className="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
+              <div className="inline-flex items-center gap-[5px] relative flex-[0_0_auto]">
+                <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-medium text-black text-[20px] tracking-[0] leading-[normal]">
+                  14.00
+                </div>
+                <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-medium text-black text-[20px] tracking-[0] leading-[normal]">
+                  €
+                </div>
+              </div>
+              <img
+                className="relative w-[20px] h-[18px] mr-[-1.00px]"
+                alt="Like"
+                src="https://c.animaapp.com/tayVNL83/img/like.svg"
+              />
+            </div>
+          </div>
+          <div className="absolute bottom-20 flex flex-col items-start gap-[10px] px-[20px] py-0 self-stretch w-full flex-[0_0_auto]">
+            <Button
+              onClick={startXRSession}
+              className="flex mb-6 h-[50px] items-center justify-center gap-[10px] p-[20px] self-stretch w-full bg-green rounded-[12px] overflow-hidden shadow-shadow"
+            >
+              <img
+                className="relative w-[13.46px] h-[15px] mt-[-2.50px] mb-[-2.50px]"
+                alt="Icon"
+                src="https://c.animaapp.com/tayVNL83/img/icon-2.svg"
+              />
+              <div className="relative w-fit mt-[-8.00px] mb-[-6.00px] [font-family:'Poppins',Helvetica] font-normal text-white text-[16px] text-center tracking-[0] leading-[normal]">
+                Ver sobre la mesa
+              </div>
+            </Button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

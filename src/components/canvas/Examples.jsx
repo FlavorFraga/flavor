@@ -100,7 +100,60 @@ export function Food(props) {
   const { camera } = useThree();
   const [selected, setSelected] = useState(false);
 
-  const { scene } = useGLTF("/low.glb");
+  const { scene } = useGLTF("/output.glb");
+
+  // Establecer la rotación deseada para la cámara
+  const cameraRotation = {
+    _order: "XYZ",
+    _x: -1.1548961942960847,
+    _y: 0.2266207290535417,
+    _z: 0.4706039769981553,
+  };
+
+  const cameraPosition = {
+    _order: "XYZ",
+    _x: 2.202350591000231,
+    _y: 8.73706562218947,
+    _z: 1.8588474716968744,
+  };
+
+  camera.position.set(cameraPosition._x, cameraPosition._y, cameraPosition._z);
+  // Actualizar la rotación de la cámara
+  camera.rotation.set(cameraRotation._x, cameraRotation._y, cameraRotation._z);
+  /* 
+  const handleInteraction = () => {
+    if (selected) {
+      // Imprime la posición y rotación del objeto cuando está seleccionado
+      console.log("Posición:", scene.position);
+      console.log("Rotación:", scene.rotation);
+
+      // También puedes acceder a la posición y rotación de la cámara
+      console.log("Posición de la cámara:", camera.position);
+      console.log("Rotación de la cámara:", camera.rotation);
+
+      // Realiza cualquier otra lógica de interacción que desees
+    }
+  };
+  useFrame(() => {
+    handleInteraction();
+  }); */
+
+  return (
+    <primitive
+      object={scene}
+      {...props}
+      /*   onClick={(event) => {
+        setSelected(!selected);
+      }} */
+    />
+  );
+}
+
+export function Beans(props) {
+  const { camera } = useThree();
+  const [selected, setSelected] = useState(false);
+
+  const { scene } = useGLTF("/beans.glb");
 
   // Establecer la rotación deseada para la cámara
   const cameraRotation = {
