@@ -11,7 +11,7 @@ import BackArrowIcon from "../icons/backArrowIcon";
 function NavComponent({ property1, className }) {
   return (
     <div
-      className={`!w-full flex items-center pt-[30px] pb-[20px] px-[20px] h-[70px] [-webkit-backdrop-filter:blur(30px)_brightness(100%)] justify-between bg-[#ffffff03] backdrop-blur-[30px] backdrop-brightness-[100%] relative ${className}`}
+      className={`!w-full flex items-center pt-[30px] pb-[20px] px-[20px] h-[70px] justify-between bg-[#ffffff03] backdrop-blur-[30px] backdrop-brightness-[100%] relative ${className}`}
     >
       <Link href="/menu">
         <BackArrowIcon />

@@ -364,71 +364,83 @@ function WelcomeMobile() {
               vector="https://c.animaapp.com/3gXe0TqT/img/line-2.svg"
             />
             <div className="absolute w-[1724px] h-[460px] top-[6209px] left-[100px]">
-              <div className="absolute w-[927px] h-[30px] top-[224px] left-0">
-                <div className="absolute top-0 left-0 [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                  Inicio
+              <FadeIn>
+                <div className="absolute w-[927px] h-[30px] top-[224px] left-0">
+                  <div className="absolute top-0 left-0 [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
+                    Inicio
+                  </div>
+                  <div className="absolute top-0 left-[113px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
+                    Nosotros
+                  </div>
+                  <div className="absolute top-0 left-[262px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
+                    Restaurantes
+                  </div>
+                  <div className="absolute top-0 left-[455px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
+                    Precio
+                  </div>
+                  <div className="absolute top-0 left-[577px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
+                    Trabaja con nosotros
+                  </div>
+                  <div className="absolute top-0 left-[850px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
+                    Ayuda
+                  </div>
                 </div>
-                <div className="absolute top-0 left-[113px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                  Nosotros
+              </FadeIn>
+              <FadeIn>
+                <div className="absolute w-[549px] h-[30px] top-[374px] left-[1177px]">
+                  <div className="absolute top-0 left-[463px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] text-right tracking-[0] leading-[normal] underline">
+                    Cookies
+                  </div>
+                  <div className="absolute top-0 left-[296px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] text-right tracking-[0] leading-[normal] underline">
+                    Privacidad
+                  </div>
+                  <div className="absolute top-0 left-0 [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] text-right tracking-[0] leading-[normal] underline">
+                    Términos y condiciones
+                  </div>
                 </div>
-                <div className="absolute top-0 left-[262px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                  Restaurantes
-                </div>
-                <div className="absolute top-0 left-[455px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                  Precio
-                </div>
-                <div className="absolute top-0 left-[577px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                  Trabaja con nosotros
-                </div>
-                <div className="absolute top-0 left-[850px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                  Ayuda
-                </div>
-              </div>
-              <div className="absolute w-[549px] h-[30px] top-[374px] left-[1177px]">
-                <div className="absolute top-0 left-[463px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] text-right tracking-[0] leading-[normal] underline">
-                  Cookies
-                </div>
-                <div className="absolute top-0 left-[296px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] text-right tracking-[0] leading-[normal] underline">
-                  Privacidad
-                </div>
-                <div className="absolute top-0 left-0 [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] text-right tracking-[0] leading-[normal] underline">
-                  Términos y condiciones
-                </div>
-              </div>
-              <p className="absolute w-[660px] top-[80px] left-0 font-normal text-gray-iii text-[28px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
-                Únete a los más de 15M+ de restaurantes que llevan la
-                experiencia a un siguiente nivel.
-              </p>
-              <p className="absolute top-[374px] left-0 font-normal text-gray-iii text-[20px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
-                ©️ 2023 iFlavi. Todos los derechos reservados
-              </p>
-              <img
-                className="w-[117px] h-[38px] left-0 absolute top-0"
-                alt="Image"
-                src="https://c.animaapp.com/3gXe0TqT/img/image-2-1@2x.png"
-              />
-              <div className="inline-flex flex-col items-start gap-[20px] absolute top-0 left-[1338px]">
-                <p className="relative self-stretch mt-[-1.00px] font-normal text-transparent text-[28px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
-                  <span className="text-[#191c21]">
-                    No esperes más,
-                    <br />
-                  </span>
-                  <span className="text-[#319f60]">inicia hoy mismo</span>
+              </FadeIn>
+              <FadeInLeft>
+                <p className="absolute w-[660px] top-[80px] left-0 font-normal text-gray-iii text-[28px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
+                  Únete a los más de 15M+ de restaurantes que llevan la
+                  experiencia a un siguiente nivel.
                 </p>
-                <ButtonLanding
-                  divClassName="!mt-[-6.00px] !text-[20px] !mb-[-4.00px]"
-                  property1="active"
-                  propertyDefaultClassName="!h-[60px] !inline-flex !bg-green !w-[unset]"
-                  text="Iniciar prueba gratuita por 30 días"
+              </FadeInLeft>
+              <FadeIn>
+                <p className="absolute top-[374px] left-0 font-normal text-gray-iii text-[20px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
+                  ©️ 2023 iFlavi. Todos los derechos reservados
+                </p>
+              </FadeIn>
+              <FadeInLeft>
+                <img
+                  className="w-[117px] h-[38px] left-0 absolute top-0"
+                  alt="Image"
+                  src="https://c.animaapp.com/3gXe0TqT/img/image-2-1@2x.png"
                 />
-              </div>
+              </FadeInLeft>
+              <FadeIn>
+                <div className="inline-flex flex-col items-start gap-[20px] absolute top-0 left-[1338px]">
+                  <p className="relative self-stretch mt-[-1.00px] font-normal text-transparent text-[28px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
+                    <span className="text-[#191c21]">
+                      No esperes más,
+                      <br />
+                    </span>
+                    <span className="text-[#319f60]">inicia hoy mismo</span>
+                  </p>
+                  <ButtonLanding
+                    divClassName="!mt-[-6.00px] !text-[20px] !mb-[-4.00px]"
+                    property1="active"
+                    propertyDefaultClassName="!h-[60px] !inline-flex !bg-green !w-[unset]"
+                    text="Iniciar prueba gratuita por 30 días"
+                  />
+                </div>
+              </FadeIn>
               <img
                 className="absolute w-[1720px] h-px top-[313px] left-0 object-cover"
                 alt="Line"
                 src="https://c.animaapp.com/3gXe0TqT/img/line-1.svg"
               />
             </div>
-            <div className="flex w-[1820px] items-start justify-between px-[50px] py-[20px] fixed top-[30px] left-[50px] bg-[#ffffff03] rounded-[50px] backdrop-blur-[50px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(50px)_brightness(100%)]">
+            <div className="flex w-[1820px] items-start justify-between px-[50px] py-[20px] fixed top-[30px] left-[50px] bg-[#ffffff03] rounded-[50px] backdrop-blur-[50px] backdrop-brightness-[100%]">
               <FadeInLeft>
                 <img
                   className="relative w-[117px] h-[38px]"

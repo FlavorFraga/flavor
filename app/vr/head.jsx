@@ -11,7 +11,7 @@ export default function Head() {
       {/* Meta etiquetas recomendadas */}
       <meta charSet="utf-8" />
       <meta name="language" content="english" />
-      <meta httpEquiv="content-type" content="text/html" />
+      <meta httpEquiv="content-type" content="utf-8" />
       <meta name="author" content={author} />
       <meta name="designer" content={author} />
       <meta name="publisher" content={author} />

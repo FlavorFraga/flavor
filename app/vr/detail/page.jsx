@@ -186,10 +186,7 @@ function MoreInfoPizza() {
         </Canvas>
       ) : (
         <div className="min-h-screen flex flex-col items-center gap-[10px] relative bg-white">
-          <NavComponent
-            className="![backdrop-filter:unset] ![-webkit-backdrop-filter:unset] !w-[unset]"
-            property1="dish"
-          />
+          <NavComponent className="!w-[unset]" property1="dish" />
           <View orbit className="relative w-full h-[240px]">
             <Suspense fallback={null}>
               <Beans scale={0.1} position={[0, 0, 0]} rotation={[0, 0, 0]} />
