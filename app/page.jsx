@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import ButtonComponent from "@/components/ui/button";
@@ -9,6 +9,45 @@ import Tablet from "@/components/responsive/tablet";
 import Mobile from "@/components/responsive/mobile";
 import PriceCard from "@/components/ui/priceCard";
 import ButtonLanding from "@/components/ui/landingButton";
+import { motion, useInView } from "framer-motion";
+
+function FadeInLeft({ children }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <div ref={ref}>
+      <div
+        style={{
+          transform: isInView ? "none" : "translateX(-200px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function FadeIn({ children }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <div ref={ref}>
+      <div
+        style={{
+          opacity: isInView ? 1 : 0,
+          transition: "opacity 0.9s ease", // Cambia la duración y la función de temporización según tus preferencias
+          transitionDelay: "0.5s", // Añade un retraso de 1 segundo antes de que comience la animación
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
 
 function WelcomeMobile() {
   const router = useRouter();
@@ -70,7 +109,7 @@ function WelcomeMobile() {
       </Tablet>
       <Desktop>
         <div className="bg-[#ffffff] flex flex-row justify-center w-full">
-          <div className="bg-white w-[1920px] h-[6696px] relative">
+          <div className="bg-white w-full relative">
             <div className="absolute w-[1676px] h-[998px] top-[2911px] left-[156px]">
               <div className="absolute top-[535px] left-[656px] [font-family:'Poppins',Helvetica] font-medium text-black text-[80px] tracking-[0] leading-[90px] whitespace-nowrap">
                 Experiencias
@@ -107,32 +146,41 @@ function WelcomeMobile() {
                 Carta
               </div>
             </div>
-            <img
-              className="absolute w-[609px] h-[915px] top-[109px] left-[925px] object-cover"
-              alt="Pexels blue bird"
-              src="https://c.animaapp.com/3gXe0TqT/img/pexels-blue-bird-7242744-1.png"
-            />
+            <FadeIn>
+              <img
+                className="absolute w-[609px] h-[915px] top-[109px] left-[925px] object-cover"
+                alt="Pexels blue bird"
+                src="https://c.animaapp.com/3gXe0TqT/img/pexels-blue-bird-7242744-1.png"
+              />
+            </FadeIn>
+
             <div className="absolute w-[1722px] h-[136px] top-[1324px] left-[100px]">
-              <p className="absolute w-[912px] top-[2px] left-[410px] [font-family:'Poppins',Helvetica] font-normal text-black text-[28px] tracking-[0] leading-[normal]">
-                Posuere mi nam nullam arcu ac lectus. Adipiscing elementum in
-                tellus duis viverra eget sodales eu. Nunc egestas pellentesque
-                odio ultrices auctor eget aliquam urna. Lectus ullamcorper.
-              </p>
-              <div className="inline-flex items-center gap-[20px] absolute top-[94px] left-[1528px]">
-                <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-bold text-black text-[28px] tracking-[0] leading-[normal] underline">
-                  Saber más
+              <FadeInLeft>
+                <p className="absolute w-[912px] top-[2px] left-[410px] [font-family:'Poppins',Helvetica] font-normal text-black text-[28px] tracking-[0] leading-[normal]">
+                  Posuere mi nam nullam arcu ac lectus. Adipiscing elementum in
+                  tellus duis viverra eget sodales eu. Nunc egestas pellentesque
+                  odio ultrices auctor eget aliquam urna. Lectus ullamcorper.
+                </p>
+              </FadeInLeft>
+              <FadeInLeft>
+                <div className="inline-flex items-center gap-[20px] absolute top-[94px] left-[1528px]">
+                  <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-bold text-black text-[28px] tracking-[0] leading-[normal] underline">
+                    Saber más
+                  </div>
+                  <img
+                    className="relative w-[19.56px] h-[19.56px] mr-[-1.50px]"
+                    alt="Vector"
+                    src="https://c.animaapp.com/3gXe0TqT/img/vector-2-2.svg"
+                  />
                 </div>
-                <img
-                  className="relative w-[19.56px] h-[19.56px] mr-[-1.50px]"
-                  alt="Vector"
-                  src="https://c.animaapp.com/3gXe0TqT/img/vector-2-2.svg"
-                />
-              </div>
-              <div className="inline-flex items-center justify-center px-[30px] py-[10px] absolute top-0 left-0 rounded-[50px] border-[3px] border-solid border-green">
-                <div className="relative w-fit mt-[-3.00px] [font-family:'Poppins',Helvetica] font-normal text-green text-[28px] tracking-[0] leading-[normal]">
-                  Nosotros
+              </FadeInLeft>
+              <FadeInLeft>
+                <div className="inline-flex items-center justify-center px-[30px] py-[10px] absolute top-0 left-0 rounded-[50px] border-[3px] border-solid border-green">
+                  <div className="relative w-fit mt-[-3.00px] [font-family:'Poppins',Helvetica] font-normal text-green text-[28px] tracking-[0] leading-[normal]">
+                    Nosotros
+                  </div>
                 </div>
-              </div>
+              </FadeInLeft>
             </div>
             <div className="absolute w-[1722px] h-[136px] top-[2660px] left-[100px]">
               <p className="absolute w-[912px] top-[2px] left-[410px] [font-family:'Poppins',Helvetica] font-normal text-black text-[28px] tracking-[0] leading-[normal]">
@@ -178,30 +226,34 @@ function WelcomeMobile() {
                 </div>
               </div>
             </div>
-            <p className="w-[793px] top-[367px] left-[100px] font-bold text-transparent text-[80px] absolute [font-family:'Poppins',Helvetica] tracking-[0] leading-[90px]">
-              <span className="text-[#010101]">El menú inteligente que </span>
-              <span className="text-[#319f60]">se adapta a ti</span>
-            </p>
-            <p className="absolute w-[574px] top-[728px] left-[100px] [font-family:'Poppins',Helvetica] font-normal text-transparent text-[20px] tracking-[0] leading-[normal]">
-              <span className="text-[#010101]">
-                Estamos transformando la elección de comida en una experiencia
-                visualmente impactante y personalizada, conectando el mundo
-                físico y digital.
-                <br />
-                <br />
-              </span>
-              <span className="font-bold text-[#010101]">
-                Nuestro objetivo:
-              </span>
-              <span className="text-[#010101]">
-                {" "}
-                Llevar la experiencia gastronómica a{" "}
-              </span>
-              <span className="text-[#319f60]">
-                un nivel completamente nuevo
-              </span>
-              <span className="text-[#010101]">.</span>
-            </p>
+            <FadeInLeft>
+              <p className="w-[793px] top-[367px] left-[100px] font-bold text-transparent text-[80px] absolute [font-family:'Poppins',Helvetica] tracking-[0] leading-[90px]">
+                <span className="text-[#010101]">El menú inteligente que </span>
+                <span className="text-[#319f60]">se adapta a ti</span>
+              </p>
+            </FadeInLeft>
+            <FadeInLeft>
+              <p className="absolute w-[574px] top-[728px] left-[100px] [font-family:'Poppins',Helvetica] font-normal text-transparent text-[20px] tracking-[0] leading-[normal]">
+                <span className="text-[#010101]">
+                  Estamos transformando la elección de comida en una experiencia
+                  visualmente impactante y personalizada, conectando el mundo
+                  físico y digital.
+                  <br />
+                  <br />
+                </span>
+                <span className="font-bold text-[#010101]">
+                  Nuestro objetivo:
+                </span>
+                <span className="text-[#010101]">
+                  {" "}
+                  Llevar la experiencia gastronómica a{" "}
+                </span>
+                <span className="text-[#319f60]">
+                  un nivel completamente nuevo
+                </span>
+                <span className="text-[#010101]">.</span>
+              </p>
+            </FadeInLeft>
             <div className="inline-flex items-center gap-[10px] absolute top-[994px] left-[1716px]">
               <img
                 className="relative w-[16.44px] h-[22px] ml-[-1.00px]"
@@ -212,6 +264,7 @@ function WelcomeMobile() {
                 Explorar
               </div>
             </div>
+            {/*info cards */}
             <div className="inline-flex items-start gap-[50px] absolute top-[1620px] left-[100px]">
               <div className="flex flex-col w-[540px] h-[740px] items-start justify-center gap-[70px] p-[40px] relative bg-gray-i rounded-[30px] overflow-hidden">
                 <div className="relative self-stretch [font-family:'Poppins',Helvetica] font-medium text-black-i text-[90px] tracking-[0] leading-[normal]">
@@ -287,7 +340,7 @@ function WelcomeMobile() {
               className="!absolute !left-[100px] !top-[4464px]"
               vector="https://c.animaapp.com/3gXe0TqT/img/line-2.svg"
             />
-            <div className="absolute w-[1724px] h-[404px] top-[6209px] left-[100px]">
+            <div className="absolute w-[1724px] h-[460px] top-[6209px] left-[100px]">
               <div className="absolute w-[927px] h-[30px] top-[224px] left-0">
                 <div className="absolute top-0 left-0 [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
                   Inicio
@@ -353,21 +406,25 @@ function WelcomeMobile() {
               />
             </div>
             <div className="flex w-[1820px] items-start justify-between px-[50px] py-[20px] fixed top-[30px] left-[50px] bg-[#ffffff03] rounded-[50px] backdrop-blur-[50px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(50px)_brightness(100%)]">
-              <img
-                className="relative w-[117px] h-[38px]"
-                alt="Image"
-                src="https://c.animaapp.com/3gXe0TqT/img/image-2@2x.png"
-              />
-              <div className="inline-flex items-center gap-[20px] relative flex-[0_0_auto]">
+              <FadeInLeft>
                 <img
-                  className="relative w-[66px] h-[15px]"
-                  alt="Vector"
-                  src="https://c.animaapp.com/3gXe0TqT/img/vector-1.svg"
+                  className="relative w-[117px] h-[38px]"
+                  alt="Image"
+                  src="https://c.animaapp.com/3gXe0TqT/img/image-2@2x.png"
                 />
-                <div className="relative w-fit mt-[-1.00px] font-title font-[number:var(--title-font-weight)] text-black text-[length:var(--title-font-size)] text-center tracking-[var(--title-letter-spacing)] leading-[var(--title-line-height)] [font-style:var(--title-font-style)]">
-                  Menú
+              </FadeInLeft>
+              <FadeInLeft>
+                <div className="inline-flex items-center gap-[20px] relative flex-[0_0_auto]">
+                  <img
+                    className="relative w-[66px] h-[15px]"
+                    alt="Vector"
+                    src="https://c.animaapp.com/3gXe0TqT/img/vector-1.svg"
+                  />
+                  <div className="relative w-fit mt-[-1.00px] font-title font-[number:var(--title-font-weight)] text-black text-[length:var(--title-font-size)] text-center tracking-[var(--title-letter-spacing)] leading-[var(--title-line-height)] [font-style:var(--title-font-style)]">
+                    Menú
+                  </div>
                 </div>
-              </div>
+              </FadeInLeft>
             </div>
           </div>
         </div>
