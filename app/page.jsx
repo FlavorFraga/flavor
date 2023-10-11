@@ -110,41 +110,44 @@ function WelcomeMobile() {
       <Desktop>
         <div className="bg-[#ffffff] flex flex-row justify-center w-full">
           <div className="bg-white w-full relative">
+            {/*Experiencias a la carta */}
             <div className="absolute w-[1676px] h-[998px] top-[2911px] left-[156px]">
-              <div className="absolute top-[535px] left-[656px] [font-family:'Poppins',Helvetica] font-medium text-black text-[80px] tracking-[0] leading-[90px] whitespace-nowrap">
-                Experiencias
-              </div>
-              <img
-                className="w-[677px] h-[998px] left-[2px] object-cover absolute top-0"
-                alt="Image"
-                src="https://c.animaapp.com/3gXe0TqT/img/image-3.png"
-              />
-              <img
-                className="absolute w-[348px] h-[348px] top-[124px] left-[398px]"
-                alt="Element model"
-                src="https://c.animaapp.com/3gXe0TqT/img/3d-model-3@2x.png"
-              />
-              <img
-                className="absolute w-[665px] h-[665px] top-[234px] left-[1011px]"
-                alt="Element model"
-                src="https://c.animaapp.com/3gXe0TqT/img/3d-model-2@2x.png"
-              />
-              <img
-                className="absolute w-[385px] h-[385px] top-[176px] left-[790px]"
-                alt="Element model"
-                src="https://c.animaapp.com/3gXe0TqT/img/3d-model-1@2x.png"
-              />
-              <img
-                className="absolute w-[424px] h-[424px] top-[158px] left-0"
-                alt="Element model"
-                src="https://c.animaapp.com/3gXe0TqT/img/3d-model@2x.png"
-              />
-              <div className="top-[637px] left-[909px] font-medium text-black text-[80px] whitespace-nowrap absolute [font-family:'Poppins',Helvetica] tracking-[0] leading-[90px]">
-                a la
-              </div>
-              <div className="top-[665px] left-[1077px] font-bold text-green text-[160px] whitespace-nowrap absolute [font-family:'Poppins',Helvetica] tracking-[0] leading-[90px]">
-                Carta
-              </div>
+              <FadeIn>
+                <div className="absolute top-[535px] left-[656px] [font-family:'Poppins',Helvetica] font-medium text-black text-[80px] tracking-[0] leading-[90px] whitespace-nowrap">
+                  Experiencias
+                </div>
+                <img
+                  className="w-[677px] h-[998px] left-[2px] object-cover absolute top-0"
+                  alt="Image"
+                  src="https://c.animaapp.com/3gXe0TqT/img/image-3.png"
+                />
+                <img
+                  className="absolute w-[348px] h-[348px] top-[124px] left-[398px]"
+                  alt="Element model"
+                  src="https://c.animaapp.com/3gXe0TqT/img/3d-model-3@2x.png"
+                />
+                <img
+                  className="absolute w-[665px] h-[665px] top-[234px] left-[1011px]"
+                  alt="Element model"
+                  src="https://c.animaapp.com/3gXe0TqT/img/3d-model-2@2x.png"
+                />
+                <img
+                  className="absolute w-[385px] h-[385px] top-[176px] left-[790px]"
+                  alt="Element model"
+                  src="https://c.animaapp.com/3gXe0TqT/img/3d-model-1@2x.png"
+                />
+                <img
+                  className="absolute w-[424px] h-[424px] top-[158px] left-0"
+                  alt="Element model"
+                  src="https://c.animaapp.com/3gXe0TqT/img/3d-model@2x.png"
+                />
+                <div className="top-[637px] left-[909px] font-medium text-black text-[80px] whitespace-nowrap absolute [font-family:'Poppins',Helvetica] tracking-[0] leading-[90px]">
+                  a la
+                </div>
+                <div className="top-[665px] left-[1077px] font-bold text-green text-[160px] whitespace-nowrap absolute [font-family:'Poppins',Helvetica] tracking-[0] leading-[90px]">
+                  Carta
+                </div>
+              </FadeIn>
             </div>
             <FadeIn>
               <img
@@ -182,49 +185,63 @@ function WelcomeMobile() {
                 </div>
               </FadeInLeft>
             </div>
+            {/*services and see more */}
             <div className="absolute w-[1722px] h-[136px] top-[2660px] left-[100px]">
-              <p className="absolute w-[912px] top-[2px] left-[410px] [font-family:'Poppins',Helvetica] font-normal text-black text-[28px] tracking-[0] leading-[normal]">
-                Posuere mi nam nullam arcu ac lectus. Adipiscing elementum in
-                tellus duis viverra eget sodales eu. Nunc egestas pellentesque
-                odio ultrices auctor eget aliquam urna. Lectus ullamcorper.
-              </p>
-              <div className="inline-flex items-center gap-[20px] absolute top-[94px] left-[1528px]">
-                <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-bold text-black text-[28px] tracking-[0] leading-[normal] underline">
-                  Saber más
+              <FadeInLeft>
+                <p className="absolute w-[912px] top-[2px] left-[410px] [font-family:'Poppins',Helvetica] font-normal text-black text-[28px] tracking-[0] leading-[normal]">
+                  Posuere mi nam nullam arcu ac lectus. Adipiscing elementum in
+                  tellus duis viverra eget sodales eu. Nunc egestas pellentesque
+                  odio ultrices auctor eget aliquam urna. Lectus ullamcorper.
+                </p>
+              </FadeInLeft>
+              <FadeInLeft>
+                <div className="inline-flex items-center gap-[20px] absolute top-[94px] left-[1528px]">
+                  <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-bold text-black text-[28px] tracking-[0] leading-[normal] underline">
+                    Saber más
+                  </div>
+                  <img
+                    className="relative w-[19.56px] h-[19.56px] mr-[-1.50px]"
+                    alt="Vector"
+                    src="https://c.animaapp.com/3gXe0TqT/img/vector-2-2.svg"
+                  />
                 </div>
-                <img
-                  className="relative w-[19.56px] h-[19.56px] mr-[-1.50px]"
-                  alt="Vector"
-                  src="https://c.animaapp.com/3gXe0TqT/img/vector-2-2.svg"
-                />
-              </div>
-              <div className="inline-flex items-center justify-center px-[30px] py-[10px] absolute top-0 left-0 rounded-[50px] border-[3px] border-solid border-green">
-                <div className="relative w-fit mt-[-3.00px] [font-family:'Poppins',Helvetica] font-normal text-green text-[28px] tracking-[0] leading-[normal]">
-                  Servicios
+              </FadeInLeft>
+              <FadeInLeft>
+                <div className="inline-flex items-center justify-center px-[30px] py-[10px] absolute top-0 left-0 rounded-[50px] border-[3px] border-solid border-green">
+                  <div className="relative w-fit mt-[-3.00px] [font-family:'Poppins',Helvetica] font-normal text-green text-[28px] tracking-[0] leading-[normal]">
+                    Servicios
+                  </div>
                 </div>
-              </div>
+              </FadeInLeft>
             </div>
+            {/*prices */}
             <div className="absolute w-[1722px] h-[136px] top-[4168px] left-[100px]">
-              <p className="absolute w-[912px] top-[2px] left-[410px] [font-family:'Poppins',Helvetica] font-normal text-black text-[28px] tracking-[0] leading-[normal]">
-                Posuere mi nam nullam arcu ac lectus. Adipiscing elementum in
-                tellus duis viverra eget sodales eu. Nunc egestas pellentesque
-                odio ultrices auctor eget aliquam urna. Lectus ullamcorper.
-              </p>
-              <div className="inline-flex items-center gap-[20px] absolute top-[94px] left-[1528px]">
-                <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-bold text-black text-[28px] tracking-[0] leading-[normal] underline">
-                  Saber más
+              <FadeInLeft>
+                <p className="absolute w-[912px] top-[2px] left-[410px] [font-family:'Poppins',Helvetica] font-normal text-black text-[28px] tracking-[0] leading-[normal]">
+                  Posuere mi nam nullam arcu ac lectus. Adipiscing elementum in
+                  tellus duis viverra eget sodales eu. Nunc egestas pellentesque
+                  odio ultrices auctor eget aliquam urna. Lectus ullamcorper.
+                </p>
+              </FadeInLeft>
+              <FadeInLeft>
+                <div className="inline-flex items-center gap-[20px] absolute top-[94px] left-[1528px]">
+                  <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-bold text-black text-[28px] tracking-[0] leading-[normal] underline">
+                    Saber más
+                  </div>
+                  <img
+                    className="relative w-[19.56px] h-[19.56px] mr-[-1.50px]"
+                    alt="Vector"
+                    src="https://c.animaapp.com/3gXe0TqT/img/vector-2.svg"
+                  />
                 </div>
-                <img
-                  className="relative w-[19.56px] h-[19.56px] mr-[-1.50px]"
-                  alt="Vector"
-                  src="https://c.animaapp.com/3gXe0TqT/img/vector-2.svg"
-                />
-              </div>
-              <div className="inline-flex items-center justify-center px-[30px] py-[10px] absolute top-0 left-0 rounded-[50px] border-[3px] border-solid border-green">
-                <div className="relative w-fit mt-[-3.00px] [font-family:'Poppins',Helvetica] font-normal text-green text-[28px] tracking-[0] leading-[normal]">
-                  Precios
+              </FadeInLeft>
+              <FadeInLeft>
+                <div className="inline-flex items-center justify-center px-[30px] py-[10px] absolute top-0 left-0 rounded-[50px] border-[3px] border-solid border-green">
+                  <div className="relative w-fit mt-[-3.00px] [font-family:'Poppins',Helvetica] font-normal text-green text-[28px] tracking-[0] leading-[normal]">
+                    Precios
+                  </div>
                 </div>
-              </div>
+              </FadeInLeft>
             </div>
             <FadeInLeft>
               <p className="w-[793px] top-[367px] left-[100px] font-bold text-transparent text-[80px] absolute [font-family:'Poppins',Helvetica] tracking-[0] leading-[90px]">
@@ -266,57 +283,63 @@ function WelcomeMobile() {
             </div>
             {/*info cards */}
             <div className="inline-flex items-start gap-[50px] absolute top-[1620px] left-[100px]">
-              <div className="flex flex-col w-[540px] h-[740px] items-start justify-center gap-[70px] p-[40px] relative bg-gray-i rounded-[30px] overflow-hidden">
-                <div className="relative self-stretch [font-family:'Poppins',Helvetica] font-medium text-black-i text-[90px] tracking-[0] leading-[normal]">
-                  15M+
+              <FadeIn>
+                <div className="flex flex-col w-[540px] h-[740px] items-start justify-center gap-[70px] p-[40px] relative bg-gray-i rounded-[30px] overflow-hidden">
+                  <div className="relative self-stretch [font-family:'Poppins',Helvetica] font-medium text-black-i text-[90px] tracking-[0] leading-[normal]">
+                    15M+
+                  </div>
+                  <img
+                    className="relative self-stretch w-full h-[3px]"
+                    alt="Vector"
+                    src="https://c.animaapp.com/3gXe0TqT/img/vector-3-3.svg"
+                  />
+                  <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-semibold text-black-i text-[40px] tracking-[0] leading-[normal]">
+                    Restaurantes en todo el mundo conectados a iFlavi
+                  </p>
+                  <p className="relative self-stretch h-[132px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[28px] tracking-[0] leading-[normal]">
+                    Donec faucibus sapien est mattis. Metus aliquam a gravida
+                    sit aliquet. Nulla.
+                  </p>
                 </div>
-                <img
-                  className="relative self-stretch w-full h-[3px]"
-                  alt="Vector"
-                  src="https://c.animaapp.com/3gXe0TqT/img/vector-3-3.svg"
-                />
-                <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-semibold text-black-i text-[40px] tracking-[0] leading-[normal]">
-                  Restaurantes en todo el mundo conectados a iFlavi
-                </p>
-                <p className="relative self-stretch h-[132px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[28px] tracking-[0] leading-[normal]">
-                  Donec faucibus sapien est mattis. Metus aliquam a gravida sit
-                  aliquet. Nulla.
-                </p>
-              </div>
-              <div className="flex flex-col w-[540px] h-[740px] items-start justify-center gap-[70px] p-[40px] relative bg-gray-i rounded-[30px] overflow-hidden">
-                <div className="relative self-stretch [font-family:'Poppins',Helvetica] font-medium text-black-i text-[90px] tracking-[0] leading-[normal]">
-                  60M+
+              </FadeIn>
+              <FadeIn>
+                <div className="flex flex-col w-[540px] h-[740px] items-start justify-center gap-[70px] p-[40px] relative bg-gray-i rounded-[30px] overflow-hidden">
+                  <div className="relative self-stretch [font-family:'Poppins',Helvetica] font-medium text-black-i text-[90px] tracking-[0] leading-[normal]">
+                    60M+
+                  </div>
+                  <img
+                    className="relative self-stretch w-full h-[3px]"
+                    alt="Vector"
+                    src="https://c.animaapp.com/3gXe0TqT/img/vector-3-3.svg"
+                  />
+                  <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-semibold text-black-i text-[40px] tracking-[0] leading-[normal]">
+                    Usuarios activos todos los días disfrutando
+                  </p>
+                  <p className="relative self-stretch h-[132px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[28px] tracking-[0] leading-[normal]">
+                    Donec faucibus sapien est mattis. Metus aliquam a gravida
+                    sit aliquet. Nulla.
+                  </p>
                 </div>
-                <img
-                  className="relative self-stretch w-full h-[3px]"
-                  alt="Vector"
-                  src="https://c.animaapp.com/3gXe0TqT/img/vector-3-3.svg"
-                />
-                <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-semibold text-black-i text-[40px] tracking-[0] leading-[normal]">
-                  Usuarios activos todos los días disfrutando
-                </p>
-                <p className="relative self-stretch h-[132px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[28px] tracking-[0] leading-[normal]">
-                  Donec faucibus sapien est mattis. Metus aliquam a gravida sit
-                  aliquet. Nulla.
-                </p>
-              </div>
-              <div className="flex flex-col w-[540px] h-[740px] items-start justify-center gap-[70px] p-[40px] relative bg-gray-i rounded-[30px] overflow-hidden">
-                <div className="relative self-stretch font-medium text-black-i text-[90px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
-                  150+
+              </FadeIn>
+              <FadeIn>
+                <div className="flex flex-col w-[540px] h-[740px] items-start justify-center gap-[70px] p-[40px] relative bg-gray-i rounded-[30px] overflow-hidden">
+                  <div className="relative self-stretch font-medium text-black-i text-[90px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
+                    150+
+                  </div>
+                  <img
+                    className="relative self-stretch w-full h-[3px]"
+                    alt="Vector"
+                    src="https://c.animaapp.com/3gXe0TqT/img/vector-3-3.svg"
+                  />
+                  <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-semibold text-black-i text-[40px] tracking-[0] leading-[normal]">
+                    Elementum nunc viverra faucibus vitae interdum
+                  </p>
+                  <p className="relative self-stretch h-[132px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[28px] tracking-[0] leading-[normal]">
+                    Donec faucibus sapien est mattis. Metus aliquam a gravida
+                    sit aliquet. Nulla.
+                  </p>
                 </div>
-                <img
-                  className="relative self-stretch w-full h-[3px]"
-                  alt="Vector"
-                  src="https://c.animaapp.com/3gXe0TqT/img/vector-3-3.svg"
-                />
-                <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-semibold text-black-i text-[40px] tracking-[0] leading-[normal]">
-                  Elementum nunc viverra faucibus vitae interdum
-                </p>
-                <p className="relative self-stretch h-[132px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[28px] tracking-[0] leading-[normal]">
-                  Donec faucibus sapien est mattis. Metus aliquam a gravida sit
-                  aliquet. Nulla.
-                </p>
-              </div>
+              </FadeIn>
             </div>
             <PriceCard
               cardCheck="https://c.animaapp.com/3gXe0TqT/img/check-15.svg"
