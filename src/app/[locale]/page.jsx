@@ -2,7 +2,6 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
-
 import ButtonComponent from "@/components/ui/button";
 import Desktop from "@/components/responsive/desktop";
 import Tablet from "@/components/responsive/tablet";
@@ -11,9 +10,11 @@ import PriceCard from "@/components/ui/priceCard";
 import ButtonLanding from "@/components/ui/landingButton";
 import FadeInLeft from "@/helpers/animation/fadeInLeft";
 import FadeIn from "@/helpers/animation/fadeIn";
+import { useTranslations } from "next-intl";
 
 function WelcomeMobile() {
   const router = useRouter();
+  const t = useTranslations("Index");
 
   return (
     <>
@@ -131,7 +132,7 @@ function WelcomeMobile() {
               <FadeInLeft>
                 <div className="inline-flex items-center gap-[20px] absolute top-[94px] left-[1528px]">
                   <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-bold text-black text-[28px] tracking-[0] leading-[normal] underline">
-                    Saber más
+                    {t("learnMore")}
                   </div>
                   <img
                     className="relative w-[19.56px] h-[19.56px] mr-[-1.50px]"
@@ -143,7 +144,7 @@ function WelcomeMobile() {
               <FadeInLeft>
                 <div className="inline-flex items-center justify-center px-[30px] py-[10px] absolute top-0 left-0 rounded-[50px] border-[3px] border-solid border-green">
                   <div className="relative w-fit mt-[-3.00px] [font-family:'Poppins',Helvetica] font-normal text-green text-[28px] tracking-[0] leading-[normal]">
-                    Nosotros
+                    {t("aboutUsButton")}
                   </div>
                 </div>
               </FadeInLeft>
@@ -160,7 +161,7 @@ function WelcomeMobile() {
               <FadeInLeft>
                 <div className="inline-flex items-center gap-[20px] absolute top-[94px] left-[1528px]">
                   <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-bold text-black text-[28px] tracking-[0] leading-[normal] underline">
-                    Saber más
+                    {t("learnMore")}
                   </div>
                   <img
                     className="relative w-[19.56px] h-[19.56px] mr-[-1.50px]"
@@ -172,7 +173,7 @@ function WelcomeMobile() {
               <FadeInLeft>
                 <div className="inline-flex items-center justify-center px-[30px] py-[10px] absolute top-0 left-0 rounded-[50px] border-[3px] border-solid border-green">
                   <div className="relative w-fit mt-[-3.00px] [font-family:'Poppins',Helvetica] font-normal text-green text-[28px] tracking-[0] leading-[normal]">
-                    Servicios
+                    {t("servicesButton")}
                   </div>
                 </div>
               </FadeInLeft>
@@ -189,7 +190,7 @@ function WelcomeMobile() {
               <FadeInLeft>
                 <div className="inline-flex items-center gap-[20px] absolute top-[94px] left-[1528px]">
                   <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-bold text-black text-[28px] tracking-[0] leading-[normal] underline">
-                    Saber más
+                    {t("learnMore")}
                   </div>
                   <img
                     className="relative w-[19.56px] h-[19.56px] mr-[-1.50px]"
@@ -201,36 +202,29 @@ function WelcomeMobile() {
               <FadeInLeft>
                 <div className="inline-flex items-center justify-center px-[30px] py-[10px] absolute top-0 left-0 rounded-[50px] border-[3px] border-solid border-green">
                   <div className="relative w-fit mt-[-3.00px] [font-family:'Poppins',Helvetica] font-normal text-green text-[28px] tracking-[0] leading-[normal]">
-                    Precios
+                    {t("pricesButton")}
                   </div>
                 </div>
               </FadeInLeft>
             </div>
             <FadeInLeft>
               <p className="w-[793px] top-[367px] left-[100px] font-bold text-transparent text-[80px] absolute [font-family:'Poppins',Helvetica] tracking-[0] leading-[90px]">
-                <span className="text-[#010101]">El menú inteligente que </span>
-                <span className="text-[#319f60]">se adapta a ti</span>
+                <span className="text-[#010101]">{t("titleOne")} </span>
+                <span className="text-[#319f60]">{t("titleTwo")}</span>
               </p>
             </FadeInLeft>
             <FadeInLeft>
               <p className="absolute w-[574px] top-[728px] left-[100px] [font-family:'Poppins',Helvetica] font-normal text-transparent text-[20px] tracking-[0] leading-[normal]">
                 <span className="text-[#010101]">
-                  Estamos transformando la elección de comida en una experiencia
-                  visualmente impactante y personalizada, conectando el mundo
-                  físico y digital.
+                  {t("aboutUs")}
                   <br />
                   <br />
                 </span>
                 <span className="font-bold text-[#010101]">
-                  Nuestro objetivo:
+                  {t("objectiveTitle")}
                 </span>
-                <span className="text-[#010101]">
-                  {" "}
-                  Llevar la experiencia gastronómica a{" "}
-                </span>
-                <span className="text-[#319f60]">
-                  un nivel completamente nuevo
-                </span>
+                <span className="text-[#010101]"> {t("objective")} </span>
+                <span className="text-[#319f60]">{t("objectiveGreen")}</span>
                 <span className="text-[#010101]">.</span>
               </p>
             </FadeInLeft>
@@ -241,7 +235,7 @@ function WelcomeMobile() {
                 src="https://c.animaapp.com/3gXe0TqT/img/vector.svg"
               />
               <div className="relative w-fit mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[20px] tracking-[0] leading-[normal]">
-                Explorar
+                {t("explore")}
               </div>
             </div>
             {/*info cards */}
@@ -257,7 +251,7 @@ function WelcomeMobile() {
                     src="https://c.animaapp.com/3gXe0TqT/img/vector-3-3.svg"
                   />
                   <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-semibold text-black-i text-[40px] tracking-[0] leading-[normal]">
-                    Restaurantes en todo el mundo conectados a iFlavi
+                    {t("infoCardOneTitle")}
                   </p>
                   <p className="relative self-stretch h-[132px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[28px] tracking-[0] leading-[normal]">
                     Donec faucibus sapien est mattis. Metus aliquam a gravida
@@ -276,7 +270,7 @@ function WelcomeMobile() {
                     src="https://c.animaapp.com/3gXe0TqT/img/vector-3-3.svg"
                   />
                   <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-semibold text-black-i text-[40px] tracking-[0] leading-[normal]">
-                    Usuarios activos todos los días disfrutando
+                    {t("infoCardTwoTitle")}
                   </p>
                   <p className="relative self-stretch h-[132px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[28px] tracking-[0] leading-[normal]">
                     Donec faucibus sapien est mattis. Metus aliquam a gravida
@@ -295,7 +289,7 @@ function WelcomeMobile() {
                     src="https://c.animaapp.com/3gXe0TqT/img/vector-3-3.svg"
                   />
                   <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-semibold text-black-i text-[40px] tracking-[0] leading-[normal]">
-                    Elementum nunc viverra faucibus vitae interdum
+                    {t("infoCardThreeTitle")}
                   </p>
                   <p className="relative self-stretch h-[132px] [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[28px] tracking-[0] leading-[normal]">
                     Donec faucibus sapien est mattis. Metus aliquam a gravida
@@ -330,47 +324,46 @@ function WelcomeMobile() {
               <FadeIn>
                 <div className="absolute w-[927px] h-[30px] top-[224px] left-0">
                   <div className="absolute top-0 left-0 [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                    Inicio
+                    {t("homeLink")}
                   </div>
                   <div className="absolute top-0 left-[113px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                    Nosotros
+                    {t("aboutUsLink")}
                   </div>
-                  <div className="absolute top-0 left-[262px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                    Restaurantes
+                  <div className="absolute top-0 left-[250px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
+                    {t("restaurantsLink")}
                   </div>
-                  <div className="absolute top-0 left-[455px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                    Precio
+                  <div className="absolute top-0 left-[440px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
+                    {t("priceLink")}
                   </div>
-                  <div className="absolute top-0 left-[577px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                    Trabaja con nosotros
+                  <div className="absolute top-0 left-[575px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
+                    {t("workWithUsLink")}
                   </div>
-                  <div className="absolute top-0 left-[850px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
-                    Ayuda
+                  <div className="absolute top-0 left-[730px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] tracking-[0] leading-[normal] underline">
+                    {t("helpLink")}
                   </div>
                 </div>
               </FadeIn>
               <FadeIn>
                 <div className="absolute w-[549px] h-[30px] top-[374px] left-[1177px]">
                   <div className="absolute top-0 left-[463px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] text-right tracking-[0] leading-[normal] underline">
-                    Cookies
+                    {t("cookies")}
                   </div>
                   <div className="absolute top-0 left-[296px] [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] text-right tracking-[0] leading-[normal] underline">
-                    Privacidad
+                    {t("privacy")}
                   </div>
                   <div className="absolute top-0 left-0 [font-family:'Poppins',Helvetica] font-normal text-black-i text-[20px] text-right tracking-[0] leading-[normal] underline">
-                    Términos y condiciones
+                    {t("terms")}
                   </div>
                 </div>
               </FadeIn>
               <FadeInLeft>
                 <p className="absolute w-[660px] top-[80px] left-0 font-normal text-gray-iii text-[28px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
-                  Únete a los más de 15M+ de restaurantes que llevan la
-                  experiencia a un siguiente nivel.
+                  {t("footerDescription")}
                 </p>
               </FadeInLeft>
               <FadeIn>
                 <p className="absolute top-[374px] left-0 font-normal text-gray-iii text-[20px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
-                  ©️ 2023 iFlavi. Todos los derechos reservados
+                  ©️ 2023 iFlavi. {t("rightsReserved")}
                 </p>
               </FadeIn>
               <FadeInLeft>
@@ -384,16 +377,18 @@ function WelcomeMobile() {
                 <div className="inline-flex flex-col items-start gap-[20px] absolute top-0 left-[1338px]">
                   <p className="relative self-stretch mt-[-1.00px] font-normal text-transparent text-[28px] [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
                     <span className="text-[#191c21]">
-                      No esperes más,
+                      {t("footerCtaDescriptionOne")}
                       <br />
                     </span>
-                    <span className="text-[#319f60]">inicia hoy mismo</span>
+                    <span className="text-[#319f60]">
+                      {t("footerCtaDescriptionTwo")}
+                    </span>
                   </p>
                   <ButtonLanding
                     divClassName="!mt-[-6.00px] !text-[20px] !mb-[-4.00px]"
                     property1="active"
                     propertyDefaultClassName="!h-[60px] !inline-flex !bg-green !w-[unset]"
-                    text="Iniciar prueba gratuita por 30 días"
+                    text={t("footerCtaButton")}
                   />
                 </div>
               </FadeIn>
@@ -419,7 +414,7 @@ function WelcomeMobile() {
                     src="https://c.animaapp.com/3gXe0TqT/img/vector-1.svg"
                   />
                   <div className="relative w-fit mt-[-1.00px] font-title font-[number:var(--title-font-weight)] text-black text-[length:var(--title-font-size)] text-center tracking-[var(--title-letter-spacing)] leading-[var(--title-line-height)] [font-style:var(--title-font-style)]">
-                    Menú
+                    {t("menu")}
                   </div>
                 </div>
               </FadeInLeft>

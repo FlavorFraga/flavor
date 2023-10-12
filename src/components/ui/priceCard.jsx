@@ -7,6 +7,7 @@ import React from "react";
 import ButtonLanding from "./landingButton";
 import Card from "./card";
 import FadeIn from "@/helpers/animation/fadeIn";
+import { useTranslations } from "next-intl";
 
 function PriceCard({
   className,
@@ -30,6 +31,7 @@ function PriceCard({
   vector = "https://c.animaapp.com/3gXe0TqT/img/line-5.svg",
   check = "https://c.animaapp.com/3gXe0TqT/img/check-41.svg",
 }) {
+  const t = useTranslations("Index");
   return (
     <div
       className={`inline-flex items-start justify-center gap-[50px] relative ${className}`}
@@ -45,16 +47,17 @@ function PriceCard({
         hasTags2={false}
         img={cardCheck2}
         line={cardLine}
-        text="Entrada"
+        text={t("appetizer")}
         text1="4"
         text2={
           <>
-            Facturado anualmente o<br />
-            6€ mes a mes
+            {t("billingOption")}
+            <br />
+            6€ {t("periodicInterval")}
           </>
         }
-        text3="Plan básico por suscripción"
-        text4="Con el Plan Entrada tendrás acceso al servicio de menú inteligente completo."
+        text3={t("basicSubscriptionPlanTitle")}
+        text4={t("basicSubscriptionPlanDescription")}
         visible={false}
       />
       <Card
@@ -69,28 +72,29 @@ function PriceCard({
         check8={cardCheck5}
         img={cardCheck10}
         line={cardLine1}
-        text="Plato Fuerte"
+        text={t("mainCourse")}
         text1="8"
         text2={
           <>
-            Facturado anualmente o<br />
-            12€ mes a mes
+            {t("billingOption")}
+            <br />
+            12€ {t("periodicInterval")}
           </>
         }
-        text3="Plan personalizado por suscripción"
-        text4="Con el Plan Plato fuerte tendrás acceso al servicio de menú inteligente premium."
+        text3={t("customSubscriptionPlanTitle")}
+        text4={t("customSubscriptionPlanDescription")}
       />
       <FadeIn>
         <div className="flex flex-col w-[540px] items-start gap-[40px] p-[40px] relative bg-gray-i rounded-[30px] overflow-hidden">
           <div className="relative self-stretch mt-[-1.00px] [font-family:'Poppins',Helvetica] font-bold text-black-i text-[30px] tracking-[0] leading-[44.6px]">
-            Recomendación del Chef
+            {t("recommendation")}
           </div>
           <div className="flex flex-col h-[187px] items-start gap-[10px] relative self-stretch w-full">
             <div className="relative self-stretch h-[100px] mt-[-1.00px] [font-family:'Poppins',Helvetica] font-medium text-black-i text-[71px] tracking-[0] leading-[normal]">
-              Hablemos →
+              {t("letsTalk")} →
             </div>
             <div className="flex-1 self-stretch font-normal text-gray-iii text-[28px] relative [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
-              Sólo facturación anual
+              {t("annualBilling")}
             </div>
           </div>
           <img
@@ -99,15 +103,12 @@ function PriceCard({
             src={vector}
           />
           <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-semibold text-black-i text-[40px] tracking-[0] leading-[normal]">
-            Plan personalizado de pago único
+            {t("customOneSubscriptionPlanTitleOne")}
             <br />
-            +mantenimiento
+            {t("customOneSubscriptionPlanTitleTwo")}
           </p>
           <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-normal text-gray-iii text-[28px] tracking-[0] leading-[normal]">
-            Con la Recomendación del Chef tendrás tu propio menú inteligente con
-            todos los beneficios del plan Plato Fuerte, pero con la diferencia
-            de que este menú será creado desde cero para ti, con un
-            personalización del 100%
+            {t("customOneSubscriptionPlanDescription")}
           </p>
           <div className="flex items-center gap-[10px] relative self-stretch w-full flex-[0_0_auto]">
             <img
@@ -116,7 +117,7 @@ function PriceCard({
               src={check}
             />
             <p className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-              Ideal si deseas un desarrollo premium a medida.
+              {t("premiumAndCustom")}
             </p>
           </div>
           <ButtonLanding

@@ -1,14 +1,15 @@
-import { Providers } from "@/providers";
-import "@/global.css";
+import React from "react";
+import { Providers } from "@/app/providers";
+import "@/app/global.css";
 
 export const metadata = {
   title: "iFlavi",
   description: "iFlavi Menu Web Mobile App.",
 };
 
-export default function RootLayout({ children }) {
+function RootLayout({ children }) {
   return (
-    <html lang="en" className="antialiased">
+    <html lang="es" className="antialiased">
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
@@ -21,3 +22,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+export default RootLayout;

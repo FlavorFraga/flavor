@@ -2,6 +2,7 @@
 import React from "react";
 import ButtonLanding from "./landingButton";
 import FadeIn from "@/helpers/animation/fadeIn";
+import { useTranslations } from "next-intl";
 
 function Card({
   text = "Nombre",
@@ -26,6 +27,7 @@ function Card({
   check7 = "https://c.animaapp.com/3gXe0TqT/img/check-41.svg",
   check8 = "https://c.animaapp.com/3gXe0TqT/img/check-41.svg",
 }) {
+  const t = useTranslations("Index");
   return (
     <FadeIn>
       <div className="flex flex-col w-[540px] items-start gap-[40px] p-[40px] relative bg-gray-i rounded-[30px] overflow-hidden">
@@ -41,7 +43,7 @@ function Card({
               €
             </div>
             <div className="relative w-fit [font-family:'Poppins',Helvetica] font-medium text-gray-iii text-[30px] tracking-[0] leading-[normal]">
-              &nbsp;&nbsp;por plato/mes
+              &nbsp;&nbsp;{t("platePerMonth")}
             </div>
           </div>
           <p className="self-stretch font-normal text-gray-iii text-[28px] relative [font-family:'Poppins',Helvetica] tracking-[0] leading-[normal]">
@@ -67,13 +69,13 @@ function Card({
               src={check}
             />
             <div className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-              Menú inteligente
+              {t("smartMenu")}
             </div>
           </div>
           <div className="flex items-center gap-[10px] relative self-stretch w-full flex-[0_0_auto]">
             <img className="relative w-[20px] h-[20px]" alt="Check" src={img} />
             <div className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-              Menú 3D
+              {t("threeMenu")}
             </div>
           </div>
           <div className="flex items-center gap-[10px] relative self-stretch w-full flex-[0_0_auto]">
@@ -83,7 +85,7 @@ function Card({
               src={check1}
             />
             <div className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-              Visualización AR
+              {t("arVisualization")}
             </div>
           </div>
           <div className="flex items-center gap-[10px] relative self-stretch w-full flex-[0_0_auto]">
@@ -93,7 +95,7 @@ function Card({
               src={check2}
             />
             <div className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-              Asistente impulsado por AI
+              {t("aiAssistant")}
             </div>
           </div>
           <div className="flex items-center gap-[10px] relative self-stretch w-full flex-[0_0_auto]">
@@ -103,7 +105,7 @@ function Card({
               src={check3}
             />
             <div className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-              Análisis de datos
+              {t("dataAnalyst")}
             </div>
           </div>
           {hasTags && (
@@ -114,7 +116,7 @@ function Card({
                 src={check4}
               />
               <div className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-                Personalización de interfaz
+                {t("interfaceCustomization")}
               </div>
             </div>
           )}
@@ -127,7 +129,7 @@ function Card({
                 src={check5}
               />
               <div className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-                Métricas avanzadas
+                {t("advancedMetrics")}
               </div>
             </div>
           )}
@@ -140,7 +142,7 @@ function Card({
                 src={check6}
               />
               <div className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-                Gestión de inventario
+                {t("inventoryManagement")}
               </div>
             </div>
           )}
@@ -153,7 +155,7 @@ function Card({
                 src={check7}
               />
               <div className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-                Toma de pedidos
+                {t("orderTaking")}
               </div>
             </div>
           )}
@@ -166,7 +168,7 @@ function Card({
                 src={check8}
               />
               <div className="relative flex-1 mt-[-1.00px] [font-family:'Poppins',Helvetica] font-normal text-[#000000] text-[28px] tracking-[0] leading-[normal]">
-                Pasarela de pagos
+                {t("paymentGateway")}
               </div>
             </div>
           )}
@@ -175,10 +177,10 @@ function Card({
           divClassName="!mt-[-6.00px] !text-[20px] !mb-[-4.00px] !font-medium"
           property1="active"
           propertyDefaultClassName="!self-stretch !h-[60px] !bg-green !w-full"
-          text="Seleccionar"
+          text={t("selectButton")}
         />
         <p className="relative self-stretch [font-family:'Poppins',Helvetica] font-normal text-green text-[20px] text-center tracking-[0] leading-[normal] underline">
-          Iniciar prueba gratuita por 30 días
+          {t("freeTrial")}
         </p>
       </div>
     </FadeIn>
