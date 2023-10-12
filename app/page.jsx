@@ -9,45 +9,8 @@ import Tablet from "@/components/responsive/tablet";
 import Mobile from "@/components/responsive/mobile";
 import PriceCard from "@/components/ui/priceCard";
 import ButtonLanding from "@/components/ui/landingButton";
-import { motion, useInView } from "framer-motion";
-
-function FadeInLeft({ children }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <div ref={ref}>
-      <div
-        style={{
-          transform: isInView ? "none" : "translateX(-200px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-        }}
-      >
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function FadeIn({ children }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <div ref={ref}>
-      <div
-        style={{
-          opacity: isInView ? 1 : 0,
-          transition: "opacity 0.9s ease", // Cambia la duración y la función de temporización según tus preferencias
-          transitionDelay: "0.5s", // Añade un retraso de 1 segundo antes de que comience la animación
-        }}
-      >
-        {children}
-      </div>
-    </div>
-  );
-}
+import FadeInLeft from "@/helpers/animation/FadeInLeft";
+import FadeIn from "@/helpers/animation/FadeIn";
 
 function WelcomeMobile() {
   const router = useRouter();
