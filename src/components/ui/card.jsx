@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ButtonLanding from "./landingButton";
-import FadeIn from "@/helpers/animation/FadeIn";
+import FadeIn from "@/helpers/animation/fadeIn";
 
 function Card({
   text = "Nombre",

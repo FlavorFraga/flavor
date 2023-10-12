@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 
 import ButtonComponent from "@/components/ui/button";
@@ -9,8 +9,8 @@ import Tablet from "@/components/responsive/tablet";
 import Mobile from "@/components/responsive/mobile";
 import PriceCard from "@/components/ui/priceCard";
 import ButtonLanding from "@/components/ui/landingButton";
-import FadeInLeft from "@/helpers/animation/FadeInLeft";
-import FadeIn from "@/helpers/animation/FadeIn";
+import FadeInLeft from "@/helpers/animation/fadeInLeft";
+import FadeIn from "@/helpers/animation/fadeIn";
 
 function WelcomeMobile() {
   const router = useRouter();
